@@ -230,6 +230,7 @@ def _pinned_coursier_fetch_impl(repository_ctx):
         repository_ctx.path(repository_ctx.attr.maven_install_json),
         repository_ctx.path("imported_maven_install.json"),
     )
+    print(type(repository_ctx), dir(repository_ctx))
     maven_install_json_content = json_parse(
         repository_ctx.read(
             repository_ctx.path("imported_maven_install.json"),
